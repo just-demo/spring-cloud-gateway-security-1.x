@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: resource-server
+
+server:
+  port: 8870
+
+security:
+  basic:
+    enabled: false
+  oauth2:
+    resource:
+      jwt:
+        keyValue: "demo"
+      id: demoScope
+      service-id: ${PREFIX:}resource

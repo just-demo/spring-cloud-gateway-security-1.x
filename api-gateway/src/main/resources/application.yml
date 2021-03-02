@@ -1,0 +1,34 @@
+spring:
+  application:
+    name: api-gateway
+  aop:
+    proxyTargetClass: true
+
+server:
+  port: 8765
+
+zuul:
+  routes:
+    resource-server: /resource-server/**
+    authorization-server:
+      sensitiveHeaders: Authorization
+      path: /authorization-server/**
+      stripPrefix: false
+  add-proxy-headers: true
+
+security:
+  basic:
+    enabled: false
+  oauth2:
+    sso:
+      loginPath: /login
+    client:
+      accessTokenUri: http://localhost:8769/authorization-server/oauth/token
+      userAuthorizationUri: /authorization-server/oauth/authorize
+      clientId: demoClient
+      clientSecret: demoSecret
+    resource:
+      jwt:
+        keyValue: "demo"
+      id: demoScope
+      serviceId: ${PREFIX:}resource

@@ -1,0 +1,6 @@
+http://localhost:8761/
+
+http://localhost:8870/
+http://localhost:8765/resource-server
+http://localhost:8765/resource-server/principal
+http://localhost:8765/resource-server/admin

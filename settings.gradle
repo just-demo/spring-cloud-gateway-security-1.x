@@ -1,0 +1,6 @@
+rootProject.name = 'spring-cloud-gateway-security-1.x'
+
+include 'api-gateway'
+include 'authorization-server'
+include 'resource-server'
+include 'service-registry'

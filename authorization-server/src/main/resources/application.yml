@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: authorization-server
+
+server:
+  port: 8769
+  context-path: /authorization-server
+  use-forward-headers: false
+
+security:
+  basic:
+    enabled: false
+  user:
+    password: password
+  ignored: /css/**,/js/**,/favicon.ico,/webjars/**
